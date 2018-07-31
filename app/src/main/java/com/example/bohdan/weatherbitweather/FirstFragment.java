@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,8 @@ public class FirstFragment extends Fragment implements Serializable {
         LinearLayoutManager layoutManager = new LinearLayoutManager(container.getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         fragmentOneBinding.gridListView.setLayoutManager(layoutManager);
+        fragmentOneBinding.gridListView.addItemDecoration(new DividerItemDecoration
+                (container.getContext(), DividerItemDecoration.VERTICAL));
 
         MainActivity activityHome = (MainActivity) container.getContext();
         CallbackClass callbacks = new CallbackClass();
